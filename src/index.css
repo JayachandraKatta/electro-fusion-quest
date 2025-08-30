@@ -1,96 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster:wght@400&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Electro Fusion Design System - Tech Blue E-commerce Theme */
 
 @layer base {
   :root {
+    /* Tech Blue Primary Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 22% 8%;
 
+    /* Card & Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 22% 8%;
+    --glass-bg: 255 255 255 / 0.15;
+    --glass-border: 255 255 255 / 0.25;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Electro Fusion Tech Blue Theme */
+    --primary: 213 94% 50%; /* Tech Blue #007BFF */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 213 94% 45%;
+    --primary-light: 213 94% 85%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Secondary & Accent */
+    --secondary: 210 17% 85%;
+    --secondary-foreground: 210 22% 8%;
+    --accent: 213 94% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Muted & Text */
+    --muted: 210 17% 95%;
+    --muted-foreground: 210 10% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* States */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Form Elements */
+    --border: 210 17% 90%;
+    --input: 210 17% 95%;
+    --ring: 213 94% 50%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(213, 94%, 50%), hsl(213, 94%, 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(213, 94%, 50%) 0%, hsl(213, 94%, 35%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(210, 17%, 98%) 100%);
+    --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Shadows */
+    --shadow-soft: 0 2px 10px rgba(0, 123, 255, 0.1);
+    --shadow-medium: 0 4px 20px rgba(0, 123, 255, 0.15);
+    --shadow-strong: 0 8px 30px rgba(0, 123, 255, 0.25);
+    --shadow-glow: 0 0 20px rgba(0, 123, 255, 0.3);
 
-    --radius: 0.5rem;
+    /* Border Radius */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Typography */
+    --font-logo: 'Lobster', cursive;
+    --font-body: 'Inter', sans-serif;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Animations */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 210 22% 8%;
+    --foreground: 0 0% 100%;
+    --card: 210 22% 10%;
+    --card-foreground: 0 0% 100%;
+    --glass-bg: 0 0 0 / 0.25;
+    --glass-border: 255 255 255 / 0.15;
+    --muted: 210 22% 15%;
+    --muted-foreground: 210 10% 65%;
+    --border: 210 22% 20%;
+    --input: 210 22% 15%;
   }
 }
 
@@ -100,6 +94,133 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Effects */
+  .glass {
+    @apply backdrop-blur-lg bg-glass-bg border border-glass-border;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-lg bg-gradient-to-br from-white/20 to-white/5 border border-white/20 shadow-xl;
+  }
+
+  /* Logo Styling */
+  .logo {
+    font-family: var(--font-logo);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    @apply text-3xl font-bold;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-primary-foreground;
+    @apply px-6 py-3 rounded-lg font-medium;
+    @apply shadow-soft hover:shadow-medium;
+    @apply transition-all duration-200;
+    @apply border-0 cursor-pointer;
+  }
+
+  .btn-glass {
+    @apply glass text-primary hover:text-primary-foreground hover:bg-primary/20;
+    @apply px-6 py-3 rounded-lg font-medium;
+    @apply transition-all duration-300;
+  }
+
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary-hover text-white;
+    @apply px-8 py-4 rounded-xl font-semibold text-lg;
+    @apply shadow-medium hover:shadow-strong hover:scale-105;
+    @apply transition-all duration-300;
+  }
+
+  /* Product Card Styling */
+  .product-card {
+    @apply bg-card rounded-xl shadow-soft hover:shadow-medium;
+    @apply border border-border p-6;
+    @apply transition-all duration-300 hover:scale-[1.02];
+  }
+
+  .product-card-glass {
+    @apply glass-card rounded-xl p-6;
+    @apply transition-all duration-300 hover:scale-[1.02];
+  }
+
+  /* Navigation Styling */
+  .nav-glass {
+    @apply glass sticky top-0 z-50 px-6 py-4;
+    @apply border-b border-glass-border;
+  }
+
+  .nav-mobile {
+    @apply glass fixed bottom-0 left-0 right-0 z-50;
+    @apply border-t border-glass-border p-4;
+  }
+
+  /* Form Styling */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-border;
+    @apply bg-input text-foreground placeholder:text-muted-foreground;
+    @apply focus:ring-2 focus:ring-primary focus:border-primary;
+    @apply transition-all duration-200;
+  }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    @apply animate-in fade-in duration-500;
+  }
+
+  .animate-slide-up {
+    @apply animate-in slide-in-from-bottom-10 duration-500;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s infinite;
+  }
+
+  /* Utility Classes */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    @apply text-2xl;
+  }
+  
+  .btn-hero {
+    @apply px-6 py-3 text-base;
   }
 }
